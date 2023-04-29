@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Master-Slave JK Flip Flop Output Waveform Generator</title>
+    <link rel="stylesheet" href="style4.css">
+  </head>
+  <body>
+    <div id="box" >
+      <div style="background-color: #452396;">
+    <h2 style="text-align: center; padding: 10px;color: white;">Master-Slave JK Flip-Flop Output Waveform Generator</h2>
+      </div>
+      
+    <canvas id="waveform"></canvas>
+    <div class="inputs">
+      <label>
+  Clock:
+  <input type="radio" name="clock" value="0" checked> 0
+  <input type="radio" name="clock" value="1"> 1
+</label>
+<br>
+<label>
+  Master:
+  <input type="radio" name="master" value="0" checked> 0
+  <input type="radio" name="master" value="1"> 1
+</label>
+<br>
+<label>
+  Slave:
+  <input type="radio" name="slave" value="0" checked> 0
+  <input type="radio" name="slave" value="1"> 1
+</label>
+<br>
+<button id="generateOutput">Generate Output</button>
+    </div>
+  </div>
+    <script src="script4.js"></script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RELATIVE PERMITTIVITY CALCULATOR</title>
+</head>
+
+<style>
+
+    #box{
+        display: flex;
+        justify-content: center;
+    }
+    button:hover{
+        background-color: aquamarine;
+        height: 30px;
+        width: 80px;
+    }
+    label{
+        font-weight: bold;
+        margin: auto;
+        
+    }
+    input {
+        margin: auto;
+    }
+    .something {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .whole{
+        height: 80vh;
+        width: 40vw;
+        background-color: yellow; 
+        border: 2px solid black;
+        margin: auto;
+        border-radius: 4px;
+    }
+    .outer{
+        height: 98vh;
+        width:98vw ;
+        background: url(bg.jpg) no-repeat ;
+    }
+    
+</style>
+
+<body>
+    <div class="outer">
+    <div class="whole">
+    
+        <div id="header" style="background-color: aqua;">
+    <h2 style="text-align: center; padding: 10px;">RELATIVE PERMITTIVITY CALCULATOR</h2>
+    </div>
+
+    <div class="something">
+        <label for="q">Charge (in uC): </label>
+        <input type="number" name="q" id="q" placeholder="Charge" style="margin:auto"><br>
+        <label for="a">Area in cm^2:</label>
+        <input type="number" name="a" id="a" placeholder="Area" style="margin:auto"><br>
+        <label for="v">Voltage in V:</label>
+        <input type="number" name="v" id="v" placeholder="Voltage" style="margin:auto"><br>
+        <label for="d">Separation (in mm):</label>
+        <input type="number" name="d" id="d" placeholder="Separation between plates" style="margin:auto"><br>
+        <label for="t">Tickness (in mm):</label>
+        <input type="number" name="t" id="t" placeholder="Thickness of dielectric" style="margin:auto">
+    </div>
+    <br>
+    <div style="display: flex; justify-content: center;">
+        <button type="button" onclick="myFunction()" >RUN</button>
+    </div>
+    
+    <div id="box" >
+        <h3>Relative Permittivity εr : <h3 id="demo"></h3></h3>
+    </div>
+</div>
+</div>
+</body>
+
+<script>
+    function myFunction() {
+        var q = document.getElementById("q").value;
+        var a = document.getElementById("a").value;
+        var v = document.getElementById("v").value;
+        var d = document.getElementById("d").value;
+        var t = document.getElementById("t").value;
+        var k = 8.85*Math.pow(10,-12)
+        var temp = (((a*Math.pow(10,-4)*k*v)/(q*Math.pow(10,-6)))+(d-t)*Math.pow(10,-3))
+        var e = t*Math.pow(10,-3)/temp 
+        document.getElementById("demo").innerHTML = e;
+    }
+
+</script>
+
+</html>

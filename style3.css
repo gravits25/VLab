@@ -1,0 +1,177 @@
+/* Style for the container div */
+/* Cool infinite background scrolling animation.
+ * Twitter: @kootoopas
+ */
+/* Exo thin font from Google. */
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+/* Animations */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+/* Main styles */
+body {
+  margin-top: 13.5rem;
+  color: #999;
+  font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
+  text-align: center;
+  /* img size is 50x50 */
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  -webkit-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Opera 12+ */
+  animation: bg-scrolling-reverse 0.92s infinite;
+  /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+body::before {
+  /* content: "DIGITAL->ANALOG"; */
+  font-size: rem;
+  font-weight: 100;
+  font-style: normal;
+}
+body h2 {
+  
+        color:rgb(13, 15, 14);
+        font-size:xx-large;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        background-color: #f3ecec;
+        margin-left: 20px;
+    
+    
+}
+.dac-container {
+  margin: 20px auto;
+  width: 300px;
+  height: 230px;
+  background-color: #999;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #CCC;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Style for the input div */
+.dac-input {
+  margin-bottom: 10px;
+  background-color: #1b1d1b;
+}
+
+/* Style for the labels */
+label {
+  display: inline-block;
+  width: 120px;
+  text-align: left;
+  margin-right: 10px;
+}
+
+/* Style for the inputs */
+input[type="number"] {
+  width: 80px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #1d1a1a;
+  box-shadow: 0 0 5px #6a3737;
+}
+
+/* Style for the calculate button */
+button {
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  background-color: #56124c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3E8E41;
+}
+
+/* Style for the output div */
+.dac-output {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #211e1e;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #CCC;
+}
+
+  
+  /* Style formula display */
+  #formula-container {
+    margin: 20px 0;
+  }
+  
+  /* Style steps container */
+  #steps-container {
+    margin-top: 20px;
+  }
+  
+  details {
+    margin-bottom: 10px;
+  }
+  
+  details > summary {
+    background-color: #0e0d0d;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  details > p {
+    color:rgb(13, 15, 14);
+    font-size:small;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background-color: #f3ecec;
+    margin-left: 20px;
+  }
+  

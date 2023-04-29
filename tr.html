@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRUTH TABLE GENERATOR</title>
+</head>
+
+<style>
+
+    #box{
+        display: flex;
+        justify-content: center;
+    }
+    button:hover{
+        background-color: aquamarine;
+        height: 30px;
+        width: 80px;
+    }
+    label{
+        font-weight: bold;
+        margin: auto;
+        
+    }
+    input {
+        margin: auto;
+    }
+    .something {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .whole{
+        height: 80vh;
+        width: 40vw;
+        background-color: #ff9904; 
+        border: 2px solid black;
+        margin: auto;
+        border-radius: 4px;
+    }
+    .outer{
+        height: 98vh;
+        width:98vw ;
+        background: url(bg.jpg) no-repeat ;
+    }
+    
+</style>
+
+<body>
+    <div class="outer">
+    <div class="whole">
+    
+        <div id="header" style="background-color:grey;">
+    <h2 style="text-align: center; padding: 10px;">TRUTH TABLE GENERATOR</h2>
+    </div>
+
+    <div class="something">
+
+        <label for="gates">Choose a gate:</label>
+
+<select name="gates" id="gates">
+    <option value="not">NOT</option>
+    <option value="or">OR</option>
+    <option value="and">AND</option>
+    <option value="nor">NOR</option>
+    <option value="nand">NAND</option>
+    <option value="xor">XOR</option>
+    <option value="xnor">XNOR</option>
+</select>
+<br>
+<label >Inputs:</label>
+<br>
+<div style="display:flex;">
+    <label for="a">A:</label>
+    <select name="a" id="a">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <label for="b">B:</label>
+    <select name="b" id="b">
+        <option value="none">NONE</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <label for="c">C:</label>
+    <select name="c" id="c">
+        <option value="none">NONE</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+</div>
+    <br>
+    <div style="display: flex; justify-content: center;">
+        <button type="button" onclick="myFunction()" >RUN</button>
+    </div>
+    
+    <div id="box" >
+        <h3>Output:<h3 id="demo"></h3></h3>
+    </div>
+
+</div>
+</div>
+</body>
+
+<script>
+    function myFunction() {
+        var q = document.getElementById("gates").value;
+        var a = document.getElementById("a").value;
+        var b = document.getElementById("b").value;
+        var c = document.getElementById("c").value;
+
+        if(q=="not")
+        if(a=="1")
+        document.getElementById("demo").innerHTML = 0;
+        else
+        document.getElementById("demo").innerHTML = 1;
+
+        else if(q=="or")
+        if(a=="1"||b=="1"||c=="1")
+        document.getElementById("demo").innerHTML = 1;
+        else
+        document.getElementById("demo").innerHTML = 0;
+
+        else if(q=="and")
+        if((a=="1"&&b=="1"&&c=="1")||(a=="1"&&b=="1"&&c=="none"))
+        document.getElementById("demo").innerHTML = 1;
+        else
+        document.getElementById("demo").innerHTML = 0;
+
+        else if(q=="nor")
+        if((a=="0"&&b=="0"&&c=="0")&&(a=="0"&&b=="0"&&c=="none"))
+        document.getElementById("demo").innerHTML = 1;
+        else
+        document.getElementById("demo").innerHTML = 0;
+
+        else if(q=="nand")
+        if((a=="1"&&b=="1"&&c=="1")&&(a=="1"&&b=="1"&&c=="none"))
+        document.getElementById("demo").innerHTML = 0;
+        else
+        document.getElementById("demo").innerHTML = 1;
+
+        else if(q=="xor")
+        if(((a=="0"&&b=="0"&&c=="none")||(a=="1"&&b=="1"&&c=="none"))||((a=="0"&&b=="0"&&c=="0")||(a=="0"&&b=="1"&&c=="1")||(a=="1"&&b=="0"&&c=="1")||(a=="1"&&b=="1"&&c=="0")))
+        document.getElementById("demo").innerHTML = 0;
+        else
+        document.getElementById("demo").innerHTML = 1;
+
+        else if(q=="nxor")
+        if(((a=="0"&&b=="0"&&c=="none")||(a=="1"&&b=="1"&&c=="none"))||((a=="0"&&b=="0"&&c=="0")||(a=="0"&&b=="1"&&c=="1")||(a=="1"&&b=="0"&&c=="1")||(a=="1"&&b=="1"&&c=="0")))
+        document.getElementById("demo").innerHTML = 1;
+        else
+        document.getElementById("demo").innerHTML = 0;
+
+    }
+
+</script>
+
+</html>

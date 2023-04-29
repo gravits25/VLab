@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RELATIVE PERMITTIVITY CALCULATOR</title>
+</head>
+
+<style>
+
+    #box{
+        display: flex;
+        justify-content: center;
+    }
+    #boxx{
+        display: flex;
+        justify-content: center;
+    }
+    button:hover{
+        background-color: aquamarine;
+        height: 30px;
+        width: 80px;
+    }
+    label{
+        font-weight: bold;
+        margin: auto;
+        
+    }
+    input {
+        margin: auto;
+    }
+
+    .something {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        /* height:80% ; */
+    }
+    .whole{
+        height: 85vh;
+        width: 50vw;
+        background-color:aqua;
+        border: 2px solid black;
+        /* display: flex; */
+        margin: auto;
+        border-radius: 4px;
+    }
+    .outer{
+        height: 98vh;
+        width:98vw ;
+        background: url(bg.jpg) no-repeat ;
+        /* z-index: -1; */
+        /* opacity: 0.6; */
+    }
+    
+</style>
+
+<body>
+    <div class="outer">
+    <div class="whole">
+    
+        <div id="header" style="background-color:yellow;">
+    <h2 style="text-align: center; padding: 10px;">ELECTROSTATIC FORCE CALCULATOR</h2>
+    </div>
+
+    <div class="something">
+        <label for="q1">Charge Q1(C): </label>
+        <input type="number" name="q1" id="q1" placeholder="Charge" style="margin:auto"><br>
+
+        <label >Coordinates of charge Q1:</label>
+        <div style="display:flex">
+        <label for="r1x">R1x:</label>
+        <input type="number" name="r1x" id="r1x" placeholder="" style="margin:auto"><br>
+        <label for="r1y">R1y:</label>
+        <input type="number" name="r1y" id="r1y" placeholder="" style="margin:auto"><br>
+        <label for="r1z">R1z:</label>
+        <input type="number" name="r1z" id="r1z" placeholder="" style="margin:auto"><br>
+        </div>
+        
+        <label for="q2">Charge Q2(C): </label>
+        <input type="number" name="q2" id="q2" placeholder="Charge" style="margin:auto"><br>
+
+        <label >Coordinates of charge Q2:</label>
+        <div style="display:flex">
+        <label for="r2x">R2x:</label>
+        <input type="number" name="r2x" id="r2x" placeholder="" style="margin:auto"><br>
+        <label for="r2y">R2y:</label>
+        <input type="number" name="r2y" id="r2y" placeholder="" style="margin:auto"><br>
+        <label for="r2z">R2z:</label>
+        <input type="number" name="r2z" id="r2z" placeholder="" style="margin:auto"><br>
+        </div>
+
+        <label for="q">Reference Charge (C): </label>
+        <input type="number" name="q" id="q" placeholder="Charge" style="margin:auto"><br>
+
+        <label >Coordinates of charge:</label>
+        <div style="display:flex">
+        <label for="rx">Rx:</label>
+        <input type="number" name="rx" id="rx" placeholder="" style="margin:auto"><br>
+        <label for="ry">Ry:</label>
+        <input type="number" name="ry" id="ry" placeholder="" style="margin:auto"><br>
+        <label for="rz">Rz:</label>
+        <input type="number" name="rz" id="rz" placeholder="" style="margin:auto"><br>
+        </div>
+
+        <div>
+        </div>
+    <br>
+    <div style="display: flex; justify-content: center;">
+        <button type="button" onclick="myFunction()" >RUN</button>
+    </div>
+    
+    <div id="box" >
+        <h3>Force(N) : <h3 id="demo1"></h3></h3><br>
+    </div>
+    <div id="boxx" >
+        <h3>Angle b/w F1&F2(deg) : <h3 id="demo2"></h3></h3><br>
+    </div>
+</div>
+</div>
+</body>
+
+<script>
+    function myFunction() {
+        var q1 = document.getElementById("q1").value;
+        var q2 = document.getElementById("q2").value;
+        var q = document.getElementById("q").value;
+        var r1x = document.getElementById("r1x").value;
+        var r2x = document.getElementById("r2x").value;
+        var r1y = document.getElementById("r1y").value;
+        var r2y = document.getElementById("r2y").value;
+        var r1z = document.getElementById("r1z").value;
+        var r2z = document.getElementById("r2z").value;
+        var rx = document.getElementById("rx").value;
+        var ry = document.getElementById("ry").value;
+        var rz = document.getElementById("rz").value;
+        
+        var k = Math.pow(10,9)*9
+        var r1 = Math.sqrt(Math.pow(r1x-rx,2)+Math.pow(r1y-ry,2)+Math.pow(r1z-rz,2))
+        var r2 = Math.sqrt(Math.pow(r2x-rx,2)+Math.pow(r2y-ry,2)+Math.pow(r2z-rz,2))
+
+        var temp = (r1x-rx)*(r2x-rx)+(r2y-ry)*(r1y-rx)+(r2z-rz)*(r1z-rz)
+        var f1 = k*q1*q/(Math.pow(r1,2))
+        var f2 = k*q2*q/(Math.pow(r2,2))
+        var f = Math.sqrt(Math.pow(f1,2)+Math.pow(f2,2)+2*f1*f2*temp)
+        var ang = Math.acos(temp)
+        document.getElementById("demo1").innerHTML = f
+        document.getElementById("demo2").innerHTML = ang*180/3.14
+
+    }
+
+</script>
+
+</html>

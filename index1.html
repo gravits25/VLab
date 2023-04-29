@@ -1,0 +1,110 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Digital to Analog Converter</title>
+  <script src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h2>Digital to analog  Converter</h2>
+  <div class="dac-container">
+    <div class="dac-input">
+      <label for="ref-voltage">Reference Voltage (V):</label>
+      <input type="number" id="ref-voltage">
+      <label for="num-bits">Number of Bits:</label>
+      <input type="number" id="num-bits">
+      <button onclick="calculate()">Calculate</button>
+    </div>
+    <div class="dac-output">
+      <div id="analog-value-container">
+        <label for="analog-value">Analog Voltage(V):</label>
+        <span id="output-voltage"></span>
+      </div>
+    </div>
+  </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <link rel="stylesheet" type="text/css" href="style2.css">
+        <script src="script2.js"></script>
+      </head>
+      
+<body>
+  <body>
+    <h2>Analog to Digital   Converter</h2>
+  <div class="dac-container">
+    <div class="dac-input">
+      <label for="analog-voltage">Analog Volatage(V)</label></label>
+      <input type="number" id="analog-voltage">
+      <label for="ref-voltage">Reference Voltage (V):</label>
+      <input type="number" id="ref-voltage">
+      <label for="num-bits">Number of Bits:</label>
+      <input type="number" id="num-bits">
+      <button onclick="calculate()">Calculate</button>
+    </div>
+    <div class="dac-output">
+  <label for="Digital-value">Digital Voltage(V):</label>
+  <span id="output-voltage"></span>
+  <label for="Binary-Digital-Output">Binary Digital Output:</label>
+  <span id="Binary-output"></span>
+</div>
+<br>
+
+<div id="steps-container"></div>
+
+  <button  onclick=<title><details>
+    <summary>Equation to calculate</summary>
+    <p>
+      `Vd = \frac{V * 2^n}{Vr}`</p>
+  </details> </title>(latex)</button>
+  <button onclick= onclick=<title><details>
+    <summary>Step followed </summary>
+    <p>
+        `Vd = \frac{V * 2^n}{Vr}`
+    </p>
+  </details> </title>
+  <details>
+    <summary>Step 1: Pre-calculation Summary</summary>
+    <p>Determine the reference voltage: This is the voltage corresponding to the digital input value of "1". You will need to know this in order to calculate the analog voltage output.</p>
+  </details>
+  
+  <details>
+    <summary>Step 2: Evaluate Formula</summary>
+    <p>Determine the number of bits: This is the number of bits in the digital input. It will typically be a power of 2, such as 8, 10, or 12.</p>
+  </details>
+  
+  <details>
+    <summary>Step 3: Calculate Analog Voltage</summary>
+    <p>Calculate the resolution of the converter: The resolution is the smallest change in the analog voltage output that can be produced by a change in the digital input. It is calculated as follows:
+
+        Digital to Analog Converter Resolution = (Reference Voltage * 2^Number of Bits)/Reference Voltage </p>
+  </details>
+  
+  <details>
+    <summary>Step 4: Final Result</summary>
+    <p>Your Final Result will be Digital Voltage Output.</p>
+  </details>
+</button>
+  
+    
+    
+  
+ 
+</div>
+  
+</body>
+</html>
